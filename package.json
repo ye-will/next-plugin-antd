@@ -17,8 +17,10 @@
   "dependencies": {
     "@zeit/next-less": "^1.0.1",
     "babel-plugin-import": "^1.13.0",
-    "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "null-loader": "^4.0.0"
+  },
+  "peerDependencies": {
+    "less": "^2.7.3"
   }
 }

@@ -51,7 +51,7 @@ module.exports = (nextConfig = {}) => {
         })
       })
       if (typeof nextConfig.webpack === 'function') {
-        return lessConfig.webpack(config, options)
+        return nextConfig.webpack(config, options)
       }
       return lessConfig
     }
