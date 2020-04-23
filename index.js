@@ -26,13 +26,13 @@ module.exports = (nextConfig = {}) => {
         })
       }
       const lessConf = {
-        exclude: /antd/,
+        exclude: /node_modules\/antd/,
         ...lessConfig.module.rules.pop()
       }
       lessConfig.module.rules.push(lessConf)
       lessConfig.module.rules.push({
         test: /\.less$/,
-        include: /antd/,
+        include: /node_modules\/antd/,
         use: cssLoaderConfig(lessConfig, {
           extensions: ['less'],
           cssModules: false,
