@@ -9,9 +9,9 @@ const themeVariables = lessToJS(
 )
 
 module.exports = withPluginAntd({
-  //
+  // loading custom ant design theme vars
   antdThemeVariables: themeVariables,
-  // all
+  // any options for @zeit/next-less
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,

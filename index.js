@@ -6,6 +6,7 @@ module.exports = (nextConfig = {}) => {
     webpack(config, options) {
       const lessConfig = withLess({ ...nextConfig, webpack: undefined }).webpack(config, options)
       const { dev, isServer } = options
+      // prevent Node.js loading less files in SSR mode
       if (isServer) {
         const antStyles = /antd\/.*?\/style.*?/
         const origExternals = [...lessConfig.externals]
@@ -25,11 +26,13 @@ module.exports = (nextConfig = {}) => {
           use: 'null-loader',
         })
       }
+      // hack the next-less, exclude ant design less filess
       const lessConf = {
         exclude: /node_modules\/antd/,
         ...lessConfig.module.rules.pop()
       }
       lessConfig.module.rules.push(lessConf)
+      // load ant design less files
       lessConfig.module.rules.push({
         test: /\.less$/,
         include: /node_modules\/antd/,
