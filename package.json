@@ -1,6 +1,6 @@
 {
   "name": "next-plugin-antd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
     "null-loader": "^4.0.0"
   },
   "peerDependencies": {
-    "less": "^2.7.3"
+    "less": "^3.11.1"
   }
 }
