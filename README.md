@@ -17,7 +17,7 @@ yarn create next-app -e https://github.com/ye-will/next-plugin-antd/tree/master/
 ## Installation
 
 ```bash
-npm install --save github:ye-will/next-plugin-antd less antd
+npm install --save next-plugin-antd less antd
 ```
 
 ## Configuring

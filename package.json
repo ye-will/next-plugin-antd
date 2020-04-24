@@ -2,14 +2,16 @@
   "name": "next-plugin-antd",
   "version": "0.1.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ye-will/next-plugin-antd.git"
   },
   "license": "MIT",
+  "files":[
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
   "bugs": {
     "url": "https://github.com/ye-will/next-plugin-antd/issues"
   },
