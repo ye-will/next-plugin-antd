@@ -1,6 +1,6 @@
 # Next.js & Ant Design (& Less) Made Easy
 
-A [@zeit/next-less][next-less] patch with full support for Ant Desgion, Less and CSS modules
+A [@zeit/next-less][next-less] patch with full support for Ant Design, Less and CSS modules
 
 ## `create-next-app` example
 
