@@ -1,5 +1,6 @@
 const cssLoaderConfig = require('@zeit/next-css/css-loader-config')
 const withLess = require('@zeit/next-less')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
@@ -25,6 +26,19 @@ module.exports = (nextConfig = {}) => {
           test: antStyles,
           use: 'null-loader',
         })
+      }
+      // hack MiniCssExtractPlugin to mute `Conflicting order...`
+      // https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250
+      // TO BE OPTIMIZED
+      for (let i = 0; i < lessConfig.plugins.length; i++) {
+        const p = config.plugins[i]
+        if (p.constructor && p.constructor.name === MiniCssExtractPlugin.name) {
+          config.plugins[i] = new MiniCssExtractPlugin({
+            ...p.options,
+            ignoreOrder: true
+          })
+          break
+        }
       }
       // hack the next-less, exclude ant design less filess
       const lessConf = {
