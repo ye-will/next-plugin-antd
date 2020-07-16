@@ -60,8 +60,10 @@ module.exports = (nextConfig = {}) => {
             {
               loader: 'less-loader',
               options: {
-                javascriptEnabled: true,
-                modifyVars: nextConfig.antdThemeVariables
+                lessOptions: {
+                  javascriptEnabled: true,
+                  modifyVars: nextConfig.antdThemeVariables
+                }
               }
             }
           ]

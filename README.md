@@ -2,6 +2,11 @@
 
 A [@zeit/next-less][next-less] patch with full support for Ant Design, Less and CSS modules
 
+## Version compatibility
+
+- for `antd: <4.0.0`, use `next-plugin-antd: ~0.1.3`
+- for `antd: >=4.0.0`, use `next-plugin-antd: ^0.2.0`
+
 ## `create-next-app` example
 
 ```bash
